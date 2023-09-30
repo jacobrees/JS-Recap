@@ -143,7 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(1);
+const book = getBook(2);
 
 const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
   book;
@@ -180,3 +180,21 @@ console.log(`the book is a ${pagesRange}`);
 const getYear = (str) => str.split("-")[0];
 
 console.log(getYear(publicationDate));
+
+console.log(true && "some string");
+console.log(false && "some string");
+console.log(hasMovieAdaptation && "This movie has a movie adaptation");
+
+// falsy values in JS are: false, 0, "", null, undefined, NaN
+console.log("jacob" && "some string");
+console.log("" && "some string");
+console.log(0 && "some string");
+
+console.log(true || "some string");
+console.log(false || "some string");
+
+console.log(book.translations.spanish || "no translation");
+
+console.log(book.reviews.librarything.rating || "no rating");
+
+console.log(book.reviews.librarything.reviewsCount ?? "no Data");
