@@ -176,3 +176,7 @@ console.log(summary);
 const pagesRange = pages > 1000 ? "big book" : "small book";
 
 console.log(`the book is a ${pagesRange}`);
+
+const getYear = (str) => str.split("-")[0];
+
+console.log(getYear(publicationDate));
