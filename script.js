@@ -169,3 +169,6 @@ const updatedBook = {
 };
 
 console.log(updatedBook);
+
+const summary = `a book by ${author} called ${title} has ${pages} pages`;
+console.log(summary);
