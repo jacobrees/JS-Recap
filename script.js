@@ -172,3 +172,7 @@ console.log(updatedBook);
 
 const summary = `a book by ${author} called ${title} has ${pages} pages`;
 console.log(summary);
+
+const pagesRange = pages > 1000 ? "big book" : "small book";
+
+console.log(`the book is a ${pagesRange}`);
