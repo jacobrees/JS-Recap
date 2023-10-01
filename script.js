@@ -143,67 +143,79 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(3);
+// const book = getBook(3);
 
-const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
-  book;
-console.log(title, author, genres);
+// const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+//   book;
+// console.log(title, author, genres);
 
-// const primaryGenre = genres[0];
-// const secondaryGenre = genres[1];
+// // const primaryGenre = genres[0];
+// // const secondaryGenre = genres[1];
 
-const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+// const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 
-console.log(primaryGenre, secondaryGenre, otherGenres);
+// console.log(primaryGenre, secondaryGenre, otherGenres);
 
-const newGenres = [...genres, "new genre"];
-console.log(newGenres);
+// const newGenres = [...genres, "new genre"];
+// console.log(newGenres);
 
-const updatedBook = {
-  ...book,
-  // adding a new property
-  moviePublicationDate: "2001-12-19",
+// const updatedBook = {
+//   ...book,
+//   // adding a new property
+//   moviePublicationDate: "2001-12-19",
 
-  // overwriting an existing property
-  pages: 1210,
-};
+//   // overwriting an existing property
+//   pages: 1210,
+// };
 
-console.log(updatedBook);
+// console.log(updatedBook);
 
-const summary = `a book by ${author} called ${title} has ${pages} pages`;
-console.log(summary);
+// const summary = `a book by ${author} called ${title} has ${pages} pages`;
+// console.log(summary);
 
-const pagesRange = pages > 1000 ? "big book" : "small book";
+// const pagesRange = pages > 1000 ? "big book" : "small book";
 
-console.log(`the book is a ${pagesRange}`);
+// console.log(`the book is a ${pagesRange}`);
 
-const getYear = (str) => str.split("-")[0];
+// const getYear = (str) => str.split("-")[0];
 
-console.log(getYear(publicationDate));
+// console.log(getYear(publicationDate));
 
-console.log(true && "some string");
-console.log(false && "some string");
-console.log(hasMovieAdaptation && "This movie has a movie adaptation");
+// console.log(true && "some string");
+// console.log(false && "some string");
+// console.log(hasMovieAdaptation && "This movie has a movie adaptation");
 
-// falsy values in JS are: false, 0, "", null, undefined, NaN
-console.log("jacob" && "some string");
-console.log("" && "some string");
-console.log(0 && "some string");
+// // falsy values in JS are: false, 0, "", null, undefined, NaN
+// console.log("jacob" && "some string");
+// console.log("" && "some string");
+// console.log(0 && "some string");
 
-console.log(true || "some string");
-console.log(false || "some string");
+// console.log(true || "some string");
+// console.log(false || "some string");
 
-console.log(book.translations.spanish || "no translation");
+// console.log(book.translations.spanish || "no translation");
 
-console.log(book.reviews.librarything?.rating || "no rating");
+// console.log(book.reviews.librarything?.rating || "no rating");
 
-console.log(book.reviews.librarything?.reviewsCount ?? "no Data");
+// console.log(book.reviews.librarything?.reviewsCount ?? "no Data");
 
-const getTotalReviewCount = (book) => {
-  const goodreadsReviewsCount = book.reviews.goodreads?.reviewsCount ?? 0;
-  const librarythingReviewsCount = book.reviews.librarything?.reviewsCount ?? 0;
+// const getTotalReviewCount = (book) => {
+//   const goodreadsReviewsCount = book.reviews.goodreads?.reviewsCount ?? 0;
+//   const librarythingReviewsCount = book.reviews.librarything?.reviewsCount ?? 0;
 
-  return goodreadsReviewsCount + librarythingReviewsCount;
-};
+//   return goodreadsReviewsCount + librarythingReviewsCount;
+// };
 
-console.log(getTotalReviewCount(book));
+// console.log(getTotalReviewCount(book));
+
+const books = getBooks();
+
+const titles = books.map((book) => book.title);
+console.log(titles);
+
+const titlesAndAuthors = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+}));
+
+console.log(titlesAndAuthors);
