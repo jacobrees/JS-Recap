@@ -230,3 +230,7 @@ const adventureBooks = books
   .map((book) => book.title);
 
 console.log(adventureBooks);
+
+const totalPageCount = books.reduce((acc, book) => acc + book.pages, 0);
+
+console.log(totalPageCount);
