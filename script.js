@@ -234,3 +234,11 @@ console.log(adventureBooks);
 const totalPageCount = books.reduce((acc, book) => acc + book.pages, 0);
 
 console.log(totalPageCount);
+
+const x = [3, 7, 1, 9, 6];
+const sort = x.slice().sort((a, b) => a - b);
+console.log(x);
+console.log(sort);
+
+const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
+console.log(sortedByPages);
