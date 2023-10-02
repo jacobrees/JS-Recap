@@ -208,53 +208,59 @@ function getBook(id) {
 
 // console.log(getTotalReviewCount(book));
 
-const books = getBooks();
+// const books = getBooks();
 
-const titles = books.map((book) => book.title);
-console.log(titles);
+// const titles = books.map((book) => book.title);
+// console.log(titles);
 
-const titlesAndAuthors = books.map((book) => ({
-  title: book.title,
-  author: book.author,
-}));
+// const titlesAndAuthors = books.map((book) => ({
+//   title: book.title,
+//   author: book.author,
+// }));
 
-console.log(titlesAndAuthors);
+// console.log(titlesAndAuthors);
 
-const longBooksWithMovie = books
-  .filter((book) => book.pages > 500)
-  .filter((book) => book.hasMovieAdaptation);
-console.log(longBooksWithMovie);
+// const longBooksWithMovie = books
+//   .filter((book) => book.pages > 500)
+//   .filter((book) => book.hasMovieAdaptation);
+// console.log(longBooksWithMovie);
 
-const adventureBooks = books
-  .filter((book) => book.genres.includes("adventure"))
-  .map((book) => book.title);
+// const adventureBooks = books
+//   .filter((book) => book.genres.includes("adventure"))
+//   .map((book) => book.title);
 
-console.log(adventureBooks);
+// console.log(adventureBooks);
 
-const totalPageCount = books.reduce((acc, book) => acc + book.pages, 0);
+// const totalPageCount = books.reduce((acc, book) => acc + book.pages, 0);
 
-console.log(totalPageCount);
+// console.log(totalPageCount);
 
-const x = [3, 7, 1, 9, 6];
-const sort = x.slice().sort((a, b) => a - b);
-console.log(x);
-console.log(sort);
+// const x = [3, 7, 1, 9, 6];
+// const sort = x.slice().sort((a, b) => a - b);
+// console.log(x);
+// console.log(sort);
 
-const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
-console.log(sortedByPages);
+// const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
+// console.log(sortedByPages);
 
-const newBook = {
-  id: 6,
-  title: "Harry Potter and the Chamber of Secrets",
-  author: "J. K. Rowling",
-};
+// const newBook = {
+//   id: 6,
+//   title: "Harry Potter and the Chamber of Secrets",
+//   author: "J. K. Rowling",
+// };
 
-booksAfterAdd = [...books, newBook];
-console.log(booksAfterAdd);
+// booksAfterAdd = [...books, newBook];
+// console.log(booksAfterAdd);
 
-const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
-console.log(booksAfterDelete);
+// const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+// console.log(booksAfterDelete);
 
-const booksAfterUpdate = booksAfterDelete.map((book) =>
-  book.id === 2 ? { ...book, title: "new title" } : book
-);
+// const booksAfterUpdate = booksAfterDelete.map((book) =>
+//   book.id === 2 ? { ...book, title: "new title" } : book
+// );
+
+fetch("https://jsonplaceholder.typicode.com/todos").then((res) => {
+  res.json().then((data) => {
+    console.log(data);
+  });
+});
