@@ -259,8 +259,18 @@ function getBook(id) {
 //   book.id === 2 ? { ...book, title: "new title" } : book
 // );
 
-fetch("https://jsonplaceholder.typicode.com/todos").then((res) => {
-  res.json().then((data) => {
-    console.log(data);
-  });
+// fetch("https://jsonplaceholder.typicode.com/todos").then((res) => {
+//   res.json().then((data) => {
+//     console.log(data);
+//   });
+// });
+
+const getTodos = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const data = await res.json();
+  return data;
+};
+
+getTodos().then((data) => {
+  console.log(data);
 });
